@@ -10,6 +10,7 @@ return {
   --{ import = "astrocommunity.pack.lua" },
   --{ import = "astrocommunity.pack.nvchad-ui" },
   --{ import = "astrocommunity.icon.mini-icons"},
+  { import = "astrocommunity.completion.blink-cmp" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.indent.mini-indentscope" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },

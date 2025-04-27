@@ -11,8 +11,7 @@ return {
       { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
       { icon = " ", key = "q", desc = "Quit", action = ":qa" },
     }
-    local is_android = vim.fn.has("android") == 1
-    if is_android then
+    if os.getenv("TERMUX_VERSION") and jit.os == "Linux" then
       table.insert(keys, 7, {
         icon = "󰁨 ",
         key = "tm",

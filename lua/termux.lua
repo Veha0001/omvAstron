@@ -1,21 +1,13 @@
 local M = {}
-
--- Use vim.uv safely (fallback if not available)
-local uv = vim.uv or vim.loop
 local termux_prefix = os.getenv("PREFIX") or "/data/data/com.termux/files/usr"
-
--- Safely check if Termux prefix path exists
-local is_termux = false
-if uv and type(uv.fs_stat) == "function" then
-  local stat = uv.fs_stat(termux_prefix)
-  if stat and stat.type == "directory" then
-    is_termux = true
-  end
-end
 
 --- Return true if running in Termux on Android
 function M.IsTermux()
-  return is_termux and vim.fn.has("unix") == 1 and vim.fn.has("android") == 1
+  if (os.getenv("HOME") == "/data/data/com.termux/files/home" and os.getenv("TERMUX_VERSION")) then
+    return true
+  else
+    return false
+  end
 end
 
 function M.MasonFixShebang()
