@@ -15,5 +15,9 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+if vim.fn.has("nvim-0.11") == 1 then
+  vim.tbl_islist = vim.islist
+end
+
 require "lazy_setup"
 require "polish"
