@@ -1,14 +1,16 @@
-# vDotAstron
+# DotAstroNvim
 
-<!--**NOTE:** This is for AstroNvim v5+-->
+<!--**NOTE:** This is for AstroNvim v4+-->
 
 My template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim) for Termux and PC.
 > [!NOTE]
-> Updated to AstroNvim v5+ for Neovim v0.10 ^latest.
+> This is for AstroNvim v4+ for nvim `v0.10^`.
 >
-> This template has some patches fixes for Termux and some other features.
+> Update to AstroNvim v5+ is unstable right now.
 
-## Make a backup of your current nvim and shared folder
+## 🛠️ Installation
+
+#### Make a backup of your current nvim and shared folder
 
 ```shell
 mv ~/.config/nvim ~/.config/nvim.bak
@@ -17,34 +19,34 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
-## 🛠️ Installation
-
-### Packages required for Termux
+### Install Required Packages 
 
 Run the following command to install the necessary packages in Termux:
 
 ```bash
 apt update && apt upgrade
-apt install termux-api python neovim git nodejs-lts fd ripgrep ruff stylua luarocks lua-language-server fzf clang termux-tools lazygit
+apt install termux-api python neovim git nodejs-lts fd ripgrep ruff stylua luarocks lua-language-server yarn fzf clang termux-tools lazygit
 ```
 
 [Get more details](https://docs.astronvim.com/)
+ 
+### Termux clipboards
 
-> [!TIP]
-> To get clipboards from vim to the device.
-> You need to install [Termux:API]() for Termux.
-> But not required for **Termux googleplay**.
+For get clipboards from vim to the device.
 
-### Clone the repository
+> Install packages: `apt install termux-api`.
+> Then install Termux:API app from **Github** or **F-Dorid**.
+
+> [!NOTE]
+> No need to install **Termux:API** for **Termux Play Store**.
+
+## Clone the repository
 **UNIX/LINUX**
 ```bash
 git clone https://github.com/Veha0001/dotAstroNvim ~/.config/nvim
 ```
 **WINDOWS**
-```shell
+```cmd
 git clone https://github.com/Veha0001/dotAstroNvim $ENV:LOCALAPPDATA/nvim
 ```
-### Then you start nvim.
-You need a good network to clone a loot of plugins at the time.
-Else it would stop or exit(1).
-## Thank You!.
+then start `nvim`.
