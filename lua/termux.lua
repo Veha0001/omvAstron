@@ -64,10 +64,12 @@ function M.PreLspServersList(servers_list)
     return {
       "jqls",
       "texlab",
+      "ruff",
       "helm_ls",
       "lua_ls",
       "luau_lsp",
       "clangd",
+      "marksman",
       "rust_analyzer",
       "intelephense"
     }
