@@ -8,7 +8,9 @@ return {
   ---@param opts AstroLSPOpts
   opts = function(_, opts)
     local termux = require('termux')  -- Import the termux module
-
+    opts.formatting = {
+      timeout_ms = 3600
+    }
     -- Safely extend the servers list
     opts.servers = termux.PreLspServersList(opts.servers) or {}
 
