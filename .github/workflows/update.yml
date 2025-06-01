@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write 
 
 jobs:
   sync-upstream:
@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Set github-actions
         run: |
@@ -40,7 +41,7 @@ jobs:
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git add .
-            git commit -m "chore: sync with AstroNvim/template@${UPSTREAM_COMMIT}"
+            git commit -m "chore:sync with AstroNvim/template@${UPSTREAM_COMMIT}"
             git push
           else
             echo "No changes to commit."
