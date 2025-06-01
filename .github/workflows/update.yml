@@ -11,16 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GH_TOKEN }}
-
-      - name: Set github-actions
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - uses: actions/checkout@v4
 
       - name: Run upstream.sh
         run: ./upstream.sh
@@ -37,8 +28,10 @@ jobs:
           version: latest
           args: .
 
-      - name: Commit and push
+      - name: Bot Commit and push
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
             git add .
             git commit -m "chore:sync with AstroNvim/template@${UPSTREAM_COMMIT}"
