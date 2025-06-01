@@ -13,7 +13,6 @@ require("lazy").setup({
   },
   { import = "community" },
   { import = "plugins" },
-  { import = "mods" },
 } --[[@as LazySpec]], {
   -- Configure any other `lazy.nvim` configuration options here
   install = { colorscheme = { "astrotheme", "habamax" } },

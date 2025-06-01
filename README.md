@@ -1,14 +1,12 @@
-# vDotAstron
+# AstroNvim Template
 
-<!--**NOTE:** This is for AstroNvim v5+-->
+**NOTE:** This is for AstroNvim v5+
 
-My template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim) for Termux and PC.
-> [!NOTE]
-> Updated to AstroNvim v5+ for Neovim v0.10 ^latest.
->
-> This template has some patches fixes for Termux and some other features.
+A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
-## Make a backup of your current nvim and shared folder
+## 🛠️ Installation
+
+#### Make a backup of your current nvim and shared folder
 
 ```shell
 mv ~/.config/nvim ~/.config/nvim.bak
@@ -17,34 +15,20 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
-## 🛠️ Installation
+#### Create a new user repository from this template
 
-### Packages required for Termux
+Press the "Use this template" button above to create a new repository to store your user configuration.
 
-Run the following command to install the necessary packages in Termux:
+You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
 
-```bash
-apt update && apt upgrade
-apt install termux-api python neovim git nodejs-lts fd ripgrep ruff rust stylua luarocks lua-language-server fzf clang termux-tools lazygit
-```
+#### Clone the repository
 
-[Get more details](https://docs.astronvim.com/)
-
-> [!TIP]
-> To get clipboards from vim to the device.
-> You need to install [Termux:API]() for Termux.
-> But not required for **Termux googleplay**.
-
-### Clone the repository
-**UNIX/LINUX**
-```bash
-git clone https://github.com/Veha0001/vDotAstron ~/.config/nvim
-```
-**WINDOWS**
 ```shell
-git clone https://github.com/Veha0001/vDotAstron $ENV:LOCALAPPDATA/nvim
+git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
 ```
-### Then you start nvim.
-You need a good network to clone a loot of plugins at the time.
-Else it would stop or exit(1).
-## Thank You!.
+
+#### Start Neovim
+
+```shell
+nvim
+```

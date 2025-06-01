@@ -18,6 +18,6 @@ fi
 # Copy changes, excluding .git, this script, and possibly other patterns
 echo "Copying files from $REPO_DIR to current directory..."
 
-rsync -av --exclude='.git' --exclude='upstream.sh' "$REPO_DIR"/ ./
+rsync -av --exclude='.git' --exclude='*.sh' --exclude='*.md' "$REPO_DIR"/ ./
 
 echo "Done."
