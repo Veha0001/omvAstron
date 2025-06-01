@@ -8,7 +8,7 @@ permissions:
   contents: write 
 
 jobs:
-  sync-upstream:
+  update:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +18,6 @@ jobs:
         run: ./upstream.sh
 
       - name: Get latest commit from upstream template
-        id: upstream_commit
         run: |
           cd template
           echo "UPSTREAM_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
@@ -35,7 +34,7 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
             git add .
-            git commit -m "chore: Sync with AstroNvim/template@${UPSTREAM_COMMIT}"
+            git commit -m "chore: All Code Formatted and Sync with AstroNvim/template@${{ env.UPSTREAM_COMMIT }}"
             git push
           else
             echo "No changes to commit."
