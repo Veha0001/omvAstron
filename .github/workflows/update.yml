@@ -1,0 +1,46 @@
+name: Manual upstream sync
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync-upstream:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set github-actions
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run upstream.sh
+        run: ./upstream.sh
+
+      - name: Get latest commit from upstream template
+        id: upstream_commit
+        run: |
+          cd template
+          echo "UPSTREAM_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - uses: JohnnyMorganz/stylua-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest
+          args: .
+
+      - name: Commit and push
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "chore: sync with AstroNvim/template@${UPSTREAM_COMMIT}"
+            git push
+          else
+            echo "No changes to commit."

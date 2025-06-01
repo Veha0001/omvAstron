@@ -34,16 +34,18 @@ apt install termux-api python neovim git nodejs-lts fd ripgrep ruff rust stylua 
 ### Clone the repository
 
 **UNIX/LINUX**
+
 ```bash
-git clone https://github.com/Veha0001/vDotAstron ~/.config/nvim
+git clone https://github.com/Veha0001/omvAstron ~/.config/nvim
 ```
 
 **WINDOWS**
+
 ```shell
-git clone https://github.com/Veha0001/vDotAstron $ENV:LOCALAPPDATA/nvim
+git clone https://github.com/Veha0001/omvAstron $ENV:LOCALAPPDATA/nvim
 ```
 
 ### Then you start nvim.
+
 You need a good network to clone a lot of plugins at the time.
 Else you will get some errors.
-
