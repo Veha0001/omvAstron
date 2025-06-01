@@ -1,12 +1,10 @@
-# AstroNvim Template
+# omvAstron
 
-**NOTE:** This is for AstroNvim v5+
+<!--**NOTE:** This is for AstroNvim v5+-->
 
-A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+My template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim).
 
-## 🛠️ Installation
-
-#### Make a backup of your current nvim and shared folder
+## Make a backup of your current nvim and shared folder
 
 ```shell
 mv ~/.config/nvim ~/.config/nvim.bak
@@ -15,20 +13,37 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
-#### Create a new user repository from this template
+## 🛠️ Installation
 
-Press the "Use this template" button above to create a new repository to store your user configuration.
+### Termux
 
-You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
+Run the following command to install the necessary packages in Termux:
 
-#### Clone the repository
-
-```shell
-git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
+```bash
+apt update && apt upgrade
+apt install termux-api python neovim git nodejs-lts fd ripgrep ruff rust stylua luarocks lua-language-server fzf clang termux-tools lazygit
 ```
 
-#### Start Neovim
+[Get more details](https://docs.astronvim.com/)
 
-```shell
-nvim
+> [!TIP]
+> Install [NerdFonts](https://nerdfonts.com) for best theme icons.
+>
+> To get clipboards to device, install [Termux:API]() for Termux. But not required for **Termux googleplay**.
+
+### Clone the repository
+
+**UNIX/LINUX**
+```bash
+git clone https://github.com/Veha0001/vDotAstron ~/.config/nvim
 ```
+
+**WINDOWS**
+```shell
+git clone https://github.com/Veha0001/vDotAstron $ENV:LOCALAPPDATA/nvim
+```
+
+### Then you start nvim.
+You need a good network to clone a lot of plugins at the time.
+Else you will get some errors.
+
