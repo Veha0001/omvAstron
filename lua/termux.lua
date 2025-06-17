@@ -71,7 +71,6 @@ function M.PreLspServersList(servers_list)
       "lua_ls",
       "luau_lsp",
       "clangd",
-      "marksman",
       "rust_analyzer",
       "intelephense",
     }
