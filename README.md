@@ -1,4 +1,4 @@
-# omvAstron
+# NvimAstron
 
 <!--**NOTE:** This is for AstroNvim v5+-->
 
@@ -21,7 +21,7 @@ Run the following command to install the necessary packages in Termux:
 
 ```bash
 apt update && apt upgrade
-apt install termux-api python neovim git nodejs-lts fd ripgrep ruff rust stylua luarocks lua-language-server fzf clang termux-tools lazygit
+apt install termux-api python neovim git nodejs-lts fd ripgrep ruff rust stylua luarocks lua-language-server fzf clang termux-tools lazygit gdu wget tectonic python-pynvim
 ```
 
 [Get more details](https://docs.astronvim.com/)
@@ -47,5 +47,6 @@ git clone https://github.com/Veha0001/omvAstron $ENV:LOCALAPPDATA/nvim
 
 ### Then you start nvim.
 
-You need a good network to clone a lot of plugins at the time.
-Else you will get some errors.
+You will need a good network to clone a lot of plugins at the time.
+
+Else you would get some errors.
